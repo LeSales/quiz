@@ -4,6 +4,9 @@ let correctAnswers = 0;
 
 showQuestion();
 
+//Events
+document.querySelector(".scoreArea button").addEventListener('click', resetEvent);
+
 //Functions
 function showQuestion() {
   if (questions[currentQuestion]) {
@@ -66,4 +69,10 @@ function finishQuiz() {
   document.querySelector(".scoreArea").style.display = "block";
   document.querySelector(".questionArea").style.display = "none";
   document.querySelector(".progress--bar").style.width = "100%";
+}
+
+function resetEvent() {
+    currentQuestion = 0;
+    correctAnswers = 0;
+    showQuestion();
 }
